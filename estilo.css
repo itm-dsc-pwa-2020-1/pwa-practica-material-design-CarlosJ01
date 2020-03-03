@@ -1,0 +1,304 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.grid-contenedor{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-auto-rows: minmax(100px, auto);
+    gap: 1em;
+    align-items: stretch;
+}
+
+body{
+    background: #f5f2f1;
+}
+
+header{
+    grid-column: 1/5;
+    grid-row: 1;
+
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-auto-rows: minmax(2em, auto);
+    gap: 0.5em;
+    
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+
+    background: white;
+    min-height: 100px;
+    border-bottom: #eb0028 10px solid;
+}
+header > .Logo > img{
+    border-radius: 10px;
+}
+header > .Eslogan > h1{
+    font-weight: bold;
+    font-style: italic;
+}
+header > nav{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-auto-rows: minmax(1em, auto);
+    gap: 0.1em;
+    
+    justify-content: space-between;
+    align-items: center;
+}
+header > nav > .Enlace > a > img{
+    border-radius: 10px;
+    width: 100px;
+    height: 50px;
+}
+
+article{
+    grid-column: 1/3;
+    grid-row: 2;
+    
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+article > .Foto > img{
+    width: 500px;
+    height: 400px;
+    border-radius: 25px;
+}
+
+aside{
+    grid-column: 3/5;
+    grid-row: 2;
+    
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+}
+aside > h2{
+    font-size: 50px;
+    font-weight: bold;
+}
+aside > h3{
+    font-size: 25px;
+    margin-top: 10px;
+}
+aside > h3 > span{
+    float: right;
+    margin: 0 1em;
+}
+aside > p{
+    font-size: 15px;
+    margin-top: 10px;
+}
+aside > #Precio{
+    color: #eb0028;
+    font-size: 25px;
+    font-weight: 700;
+}
+aside > .Imagen{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+footer{
+    grid-column: 1/-1;
+    grid-row: 3;
+
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-auto-rows: minmax(1em, auto);
+    gap: 0.5em;
+
+    background-color: white;
+    border-top: #eb0028 10px solid;
+}
+
+footer > .Redes{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+
+    justify-content: space-between;
+    align-items: center;
+}
+footer > .Redes > .EnlaceRed{
+    margin: auto;
+}
+footer > .Redes > .EnlaceRed > a > img{
+    width: 50px;
+    height: 50px;
+}
+
+footer > .CopyRight{
+    text-align: left;
+    padding: 2em 0.5em;
+}
+
+/* Tablets */
+@media only screen and (min-width: 681px) and (max-width: 1024px) {
+    header{    
+        gap: 0em;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 50px;
+    }
+    header > .Logo > img{
+        width: 100px;
+        height: 50px;
+    }
+    header > .Eslogan > h1{
+        font-size: 1.2em;
+    }
+    header > nav{
+        gap: 0;
+    }
+    header > nav > .Enlace > a > img{
+        border-radius: 10px;
+        width: 50px;
+        height: 30px;
+    }
+
+    article > .Foto{
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20% 0;
+    }
+    article > .Foto > img{
+        width: 350px;
+        height: 250px;
+    }
+
+    aside{
+        margin: 5%;
+    }
+    aside > h2{
+        font-size: 1.5em;
+    }
+    aside > h3{
+        font-size: 1em;
+    }
+    aside > h3 > span{
+        float: none;
+        margin-left: 5%;
+        font-size: 0.8em;
+    }
+    aside > p{
+        font-size: 0.7em;
+    }
+    aside > .Imagen > img{
+        width: 300px;
+        height: 200px;
+    }
+    aside > #Precio{
+        font-size: 1.3em;
+    }
+
+    footer > .Redes > .EnlaceRed > a > img{
+        width: 40px;
+        height: 40px;
+    }
+    footer > .CopyRight{
+        font-size: 0.8em;
+    }
+}
+
+/* Celulares */
+@media only screen and (min-width: 1px) and (max-width: 680px) {
+    header{    
+        gap: 0em;
+        grid-template-columns: repeat(2,1fr);
+    }
+    header > .Logo{
+        width: 100px;
+    }
+    header > .Logo > img{
+        width: 100px;
+        height: 50px;
+    }
+    header > .Eslogan > h1{
+        font-size: 0.9em;
+    }
+    header > nav{
+        grid-column: 1/3;
+        gap: 0;
+        padding-top: 0.5em;
+    }
+    header > nav > .Enlace > a > img{
+        width: 100px;
+        height: 50px;
+    }
+    article{
+        grid-column: 1/-1;
+        grid-row: 2;
+    }
+    article > .Foto{
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    article > .Foto > img{
+        width: 350px;
+        height: 250px;
+    }
+
+    aside{
+        grid-column: 1/-1;
+        grid-row: 3;
+        padding: 0.3em;
+        text-align: center;
+    }
+    aside > h2{
+        font-size: 1.3em;
+    }
+    aside > h3{
+        font-size: 1.2em;
+    }
+    aside > h3 > span{
+        float: none;
+        margin-left: 5%;
+        font-size: 0.8em;
+    }
+    aside > p{
+        font-size: 0.7em;
+        justify-content: center;
+        align-items: center;
+
+    }
+    aside > .Imagen > img{
+        width: 300px;
+        height: 200px;
+    }
+    aside > #Precio{
+        font-size: 1.3em;
+    }
+
+    footer{
+        grid-column: 1/-1;
+        grid-row: 4;
+        
+        grid-auto-rows: minmax(1em, auto);
+    }
+
+    footer > .Redes{
+        grid-column: 1/-1;
+        grid-row: 1;
+
+        margin: 1em 0;
+    }
+    footer > .Redes > .EnlaceRed > a > img{
+        width: 40px;
+        height: 40px;
+    }
+
+    footer > .CopyRight{
+        grid-column: 1/-1;
+        grid-row: 2;
+        font-size: 0.7em;
+    }
+}
